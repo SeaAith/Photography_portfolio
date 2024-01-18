@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Caio's Album</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+    <style>
+      .bg-pic {
+        background-image: url("img/mainBackground.jpg");
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat; background-size: cover;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+      }
+
+      /* Modal Content (image) */
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      /* Caption of Modal Image */
+      #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+
+      /* Add Animation */
+      .modal-content, #caption {    
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+
+      @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)} 
+        to {-webkit-transform:scale(1)}
+      }
+
+      @keyframes zoom {
+        from {transform:scale(0)} 
+        to {transform:scale(1)}
+      }
+
+      /* The Close Button */
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* 100% Image Width on Smaller Screens */
+      @media only screen and (max-width: 700px){
+        .modal-content {
+          width: 100%;
+        }
+      }
+    </style>
+    
+    
+  </head>
+  <body class="bg-dark">
+    
+<header>
+  <div class="collapse bg-black" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About me</h4>
+          <p class="text-muted">My name is Caio Henrique from Salvador/BA and this is a collection of pictures that i've taken throughout my journey on learning photgraphy, contact me to tell me what you think, hope you enjoy!!</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact me</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://twitter.com/chcjkl" class="text-white" target="_blank">Follow on Twitter</a></li>
+            <li><a href="https://www.instagram.com/caioohcj/" class="text-white" target="_blank">Follow me on Instagram</a></li>
+            <li><a href="mailto:caiohcjk@gmail.com" class="text-white" target="_blank">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-black shadow-sm">
+    <div class="container">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Caio's album</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+   <!-- The Modal -->
+   <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+    </div>
+  <section class="py-5 text-center container" >
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-white">Welcome to my album!</h1>
+        <p class="lead text-muted text-white-50">This is a collection of pictures taken by me on my journey of learning the basics of photography, you can click on each picture to get a better view, hope you enjoy!!</p>
+        <p>
+          <a href="index.html" class="btn btn-primary my-2">Main page</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light bg-pic">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/paralelaSunset.jpg" class="myImg" alt="Orange sunset" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">I took this picture when i was on my way to the subway station, it was around 6PM when i saw this beautiful sunset.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/homeSunset.jpg" class="myImg" alt="Home sunset" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">This picture was taken from the veranda of my room in my mom's house, it was an amazing view from a great sunset.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/starrySky.jpg" class="myImg" alt="Starry night sky" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">There was a blackout that day, it was around midnight when it happened and ajumped straight out of bed to take this one picture.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/scrapMetal.jpg" class="myImg" alt="Scrap metal" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">I just happened to run across some scrap metal on the street one day and thought it was quite aesthetic, this picture fits my mood at the time quite a bit.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/speedSign.jpg" class="myImg" alt="Speed sign" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">That was a very sunny day and i had just started taking pictures so i'd take one of everything i saw, turned out to be one of my favorites.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/natureBump.jpg" class="myImg alt="Trees and sky" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">I actually don't remember where, when or why i took this picture... But i like it a lot.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/mushroomGarden.jpg" class="myImg" alt="Mushrooms on tree trunk" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">This mushroom was growing on my mom's garden, i found it really pretty and it was one of the first pictures i took.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/roseGarden.jpg" class="myImg"alt="Pink rose blooming" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">This was the first "professional" picture i took, it's the one that got interested in learning more about photography.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/Roger.jpg" alt="Green eyed cat" class="myImg" width="100%" height="225">
+
+            <div class="card-body">
+              <p class="card-text">This is my late cat Roger, he was my best buddy and i miss him a lot... rest in piece buddy.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    var showModal = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    for (var i = 0; i < img.length; i++) {
+      img[i].addEventListener('click', showModal);
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+</script>
+</main>
+
+<footer class="text-muted py-5 bg-dark">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
+
+      
+  </body>
+</html>
